@@ -1,8 +1,8 @@
-Teste Desenvolvedor MaisEntregas
+# Teste Desenvolvedor MaisEntregas
 
 Olá caro desenvolvedor, nesse teste analisaremos seu conhecimento geral. Abaixo explicaremos tudo o que será necessário.
 
-Instruções
+## Instruções
 
 Você deve desenvolver uma API, utilizando Node, para uma aplicação de gerenciamento de TODOs.
 
@@ -12,7 +12,7 @@ O código precisa ser capaz de rodar em uma máquina linux.
 
 Altere o arquivo README explicando o que é preciso para rodar sua aplicação.
 
-API
+## API
 
 A API precisa ser desenvolvida em Node, e deverá ser possível:
 
@@ -21,18 +21,17 @@ A API precisa ser desenvolvida em Node, e deverá ser possível:
 - Alterar um TODO.
 - Deletar um TODO.
 
-Entrega
+## Entrega
 
 Para iniciar o teste, faça um fork deste repositório, crie uma branch com o seu nome completo e depois envie-nos o pull request. Se você apenas clonar o repositório não vai conseguir fazer push e depois vai ser mais complicado fazer o pull request.
 
-Nossa análise
+## Nossa análise
 
 - Organização do código, separação de módulos, legibilidade e comentários.
 - Histórico de commits.
 
-Dúvidas?
+## Dúvidas?
 
 Quaisquer dúvidas que você venha a ter, consulte as issues para ver se alguém já não a fez e caso você não ache sua resposta, abra você mesmo uma nova issue!
 
-Boa sorte!
-
+### Boa sorte!
