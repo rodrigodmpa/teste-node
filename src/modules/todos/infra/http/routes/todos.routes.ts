@@ -7,6 +7,7 @@ import TodosController from '../controllers/TodosController';
 const todosRouter = Router();
 const todosController = new TodosController();
 
+todosRouter.get('/', todosController.index);
 todosRouter.post('/', todosController.create);
 
 export default todosRouter;

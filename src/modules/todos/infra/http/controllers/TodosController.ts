@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 import CreateTodoService from '@modules/todos/services/CreateTodoService';
+import FindTodosService from '@modules/todos/services/FindTodosService';
 
 export default class AppointmentsController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -8,12 +9,20 @@ export default class AppointmentsController {
 
     const createTodo = container.resolve(CreateTodoService);
 
-    const appointment = await createTodo.execute({
+    const todo = await createTodo.execute({
       title,
       body,
       date,
     });
 
-    return response.json(appointment);
+    return response.json(todo);
+  }
+
+  public async index(request: Request, response: Response): Promise<Response> {
+    const findAll = container.resolve(FindTodosService);
+
+    const todos = await findAll.execute();
+
+    return response.json(todos);
   }
 }
