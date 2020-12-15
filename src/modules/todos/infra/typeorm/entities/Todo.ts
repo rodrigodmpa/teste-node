@@ -4,12 +4,10 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  ManyToOne,
-  JoinColumn,
 } from 'typeorm';
 
 @Entity('todos')
-class Todos {
+class Todo {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -29,4 +27,4 @@ class Todos {
   updated_at: Date;
 }
 
-export default Todos;
+export default Todo;
