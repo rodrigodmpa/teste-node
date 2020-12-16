@@ -30,6 +30,11 @@ class TodosRepository implements ITodosRepository {
     const todo = this.ormRepository.save({ id, title, body, date });
     return todo;
   }
+
+  public async delete(id: string): Promise<boolean> {
+    this.ormRepository.delete(id);
+    return true;
+  }
 }
 
 export default TodosRepository;

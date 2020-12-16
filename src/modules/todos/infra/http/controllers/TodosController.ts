@@ -3,6 +3,7 @@ import { container } from 'tsyringe';
 import CreateTodoService from '@modules/todos/services/CreateTodoService';
 import FindTodosService from '@modules/todos/services/FindTodosService';
 import UpdateTodosService from '@modules/todos/services/UpdateTodosService';
+import DeleteTodoService from '@modules/todos/services/DeleteTodoService';
 
 export default class TodosController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -33,5 +34,16 @@ export default class TodosController {
     const todos = await updateTodo.execute(request.params.id, request.body);
 
     return response.json(todos);
+  }
+
+  public async delete(request: Request, response: Response): Promise<Response> {
+    const deleteTodo = container.resolve(DeleteTodoService);
+
+    const isDeleted = await deleteTodo.execute(request.params.id);
+
+    if (isDeleted) {
+      return response.sendStatus(204);
+    }
+    return response.sendStatus(200);
   }
 }
