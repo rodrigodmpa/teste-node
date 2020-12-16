@@ -10,14 +10,17 @@ interface IRequest {
   date: Date;
 }
 @injectable()
-class CreateTodoService {
+class UpdateTodosService {
   constructor(
     @inject('TodosRepository')
     private todosRepository: ITodosRepository,
   ) {}
 
-  public async execute({ title, body, date }: IRequest): Promise<Todo> {
-    const todo = await this.todosRepository.create({
+  public async execute(
+    id: string,
+    { title, body, date }: IRequest,
+  ): Promise<Todo> {
+    const todo = await this.todosRepository.update(id, {
       title,
       body,
       date,
@@ -26,4 +29,4 @@ class CreateTodoService {
   }
 }
 
-export default CreateTodoService;
+export default UpdateTodosService;

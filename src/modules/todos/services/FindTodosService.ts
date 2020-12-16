@@ -5,7 +5,7 @@ import Todo from '../infra/typeorm/entities/Todo';
 import ITodosRepository from '../repositories/ITodosRepository';
 
 @injectable()
-class CreateAppointmentService {
+class CreateTodoService {
   constructor(
     @inject('TodosRepository')
     private todosRepository: ITodosRepository,
@@ -17,4 +17,4 @@ class CreateAppointmentService {
   }
 }
 
-export default CreateAppointmentService;
+export default CreateTodoService;

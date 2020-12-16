@@ -1,4 +1,4 @@
-export default interface ICreateAppointmentDTO {
+export default interface ICreateTodoDTO {
   title: string;
   body: string;
   date: Date;

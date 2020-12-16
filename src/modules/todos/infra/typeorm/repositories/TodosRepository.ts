@@ -22,6 +22,14 @@ class TodosRepository implements ITodosRepository {
 
     return todo;
   }
+
+  public async update(
+    id: string,
+    { title, body, date }: IUpdateTodoDTO,
+  ): Promise<Todo> {
+    const todo = this.ormRepository.save({ id, title, body, date });
+    return todo;
+  }
 }
 
 export default TodosRepository;
